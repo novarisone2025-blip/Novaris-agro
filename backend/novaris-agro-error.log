@@ -1,0 +1,6 @@
+INFO:     Started server process [37644]
+INFO:     Waiting for application startup.
+2026-06-15 18:09:26,745 INFO novaris-agro api_started version=1.0.0 database=sqlite
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-06-15 18:09:53,686 INFO novaris-agro login_success user_id=1 farm_id=1

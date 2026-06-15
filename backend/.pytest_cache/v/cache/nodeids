@@ -1,0 +1,6 @@
+[
+  "tests/test_api.py::test_frontend_contract_and_writes",
+  "tests/test_api.py::test_health_demo_login_and_required_routes",
+  "tests/test_api.py::test_openapi_lists_required_routes",
+  "tests/test_api.py::test_register_creates_isolated_farm"
+]
