@@ -2,7 +2,14 @@
 __pycache__/
 *.pyc
 *.db
+*.db-shm
+*.db-wal
+*.log
 .pytest_cache/
 backend/.deps/
+backend/.venv/
+backend/.iniciar-servidor.cmd
 frontend/node_modules/
 frontend/dist/
+temp-repo/
+.novaris-agro.pid

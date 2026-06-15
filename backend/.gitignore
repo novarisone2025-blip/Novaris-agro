@@ -1,0 +1,11 @@
+.env
+.venv/
+.deps/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.log
+.pytest_cache/
+tests/*_test.db
+.iniciar-servidor.cmd
