@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-novaris_agro}
+      POSTGRES_USER: ${POSTGRES_USER:-novaris}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-novaris_dev}
+    volumes:
+      - novaris_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-novaris} -d ${POSTGRES_DB:-novaris_agro}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-novaris}:${POSTGRES_PASSWORD:-novaris_dev}@db:5432/${POSTGRES_DB:-novaris_agro}
+      SECRET_KEY: ${SECRET_KEY:-novaris-agro-chave-local}
+      ACCESS_TOKEN_MINUTES: ${ACCESS_TOKEN_MINUTES:-720}
+      SEED_DEMO: ${SEED_DEMO:-true}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+volumes:
+  novaris_postgres:

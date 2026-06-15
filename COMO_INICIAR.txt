@@ -1,0 +1,18 @@
+NOVARIS AGRO
+============
+
+Para abrir o sistema:
+
+1. De dois cliques em ABRIR_NOVARIS_AGRO.bat
+2. Aguarde alguns segundos.
+3. O navegador abrira automaticamente.
+
+Endereco do sistema:
+http://127.0.0.1:8000
+
+Acesso de demonstracao:
+E-mail: demo@novarisagro.com.br
+Senha: 123456
+
+Para encerrar:
+De dois cliques em PARAR_NOVARIS_AGRO.bat
